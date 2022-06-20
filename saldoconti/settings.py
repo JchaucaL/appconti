@@ -85,15 +85,14 @@ DATABASES = {
          # 'ENGINE': 'django.db.backends.sqlite3',
          # 'NAME': BASE_DIR / 'db.sqlite3',
          'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'd3fjogamp5a6sm',
-         "HOST": "ec2-3-224-8-189.compute-1.amazonaws.com",
+         'NAME': 'd8q3sovpgkeelv',
+         "HOST": "ec2-34-198-186-145.compute-1.amazonaws.com",
          "PORT":5432,
-         "USER":"ncghjhxgdfrwop",
-         "PASSWORD":"5522ce85108c354dccab245f45af9f90cdd6bc29dc0136853f0bf9fef19f65b9"
+         "USER":"fvwvrxicxkleis",
+         "PASSWORD":"6d1511df9b2e279b95a04be701b2d836876bc525e0a3b8a21fde5d987700072d"
 
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
