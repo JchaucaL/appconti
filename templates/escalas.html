@@ -1,0 +1,62 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Update bag{% endblock title %}
+{% block content %}
+<body>
+  <div class="container mt-5">
+    <h1>Detalle Producto</h1>
+    <form method="post" action="{% url 'lista-escala' item.id %}">
+      {% csrf_token %}
+      <div class="form-group mt-2">
+        <label>Codigo / Descripcion:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          value="{{item.name}}"
+          readonly
+        />
+      </div>
+      <div class="form-group mt-2">
+        <label>Stock:</label>
+        <input
+          type="text"
+          class="form-control"
+          name="quantity"
+          value="{{item.quantity}}"
+          readonly
+        />
+      </div>
+    
+ <div class="row mt-4">
+      <!-- Loop This -->
+      {% for escala in escalas %}
+      <div class="col-lg-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            
+            <h5 class="card-title">Desde  :  {{escala.Cantidad}}</h5> 
+            <h5 class="card-title">Descto :  {{escala.Descto}}</h5> 
+            <h5 class="card-title">Precio :  {{escala.Valor_Vta}}</h5> 
+            <!-- <h6 class="card-subtitle mb-2 text-muted">Precio  :{{escala.Valor_Vta}}</h6> -->
+            <h5 class="card-title">Precio Final : {{escala.Prec_Fin}}</h5> 
+           <!--  {% if item.status == 'PENDING' %}
+            <p class="text-info">{{item.status}}</p>
+            {% elif item.status == 'BOUGHT' %}
+            <p class="text-success">{{item.status}}</p>
+            {% else %}
+            <p class="text-danger">{{item.status}}</p>
+            {% endif %} -->
+            
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+      <div class="form-group mt-2">
+        <input type="submit" value="Regreso" class="btn btn-danger" />
+      </div>
+    </form>
+  </div>
+</body>
+{% endblock content %}
